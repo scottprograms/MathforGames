@@ -12,7 +12,11 @@ namespace MathForGames
         protected Vector2 _velocity;
         protected ConsoleColor _color;
 
-
+        public Vector2 Forward
+        {
+            get { return _facing; }
+            set { _facing = value; }
+        }
 
         public Actor()
         {
@@ -24,13 +28,36 @@ namespace MathForGames
         {
             _icon = icon;
             _position = new Vector2(x, y);
+            _velocity = new Vector2();
             _color = color;
+        }
+        public Vector2 Position
+        {
+            get
+            {
+                return _position;
+            }
+            set
+            {
+                _position = value;
+            }
+        }
+        public Vector2 Velocity
+        {
+            get
+            {
+                return _velocity;
+            }
+            set
+            {
+                _velocity = value;
+            }
         }
 
         
         public void Start()
         {
-
+            
         }
 
         public virtual void Update()
@@ -42,7 +69,10 @@ namespace MathForGames
 
         public void Draw()
         {
-
+            Console.ForegroundColor = _color;
+            Console.SetCursorPosition((int)_position.X, (int)_position.Y);
+            Console.Write(_icon);
+            Console.ForegroundColor = Game.DefaultColor;
         }
 
         public void End()

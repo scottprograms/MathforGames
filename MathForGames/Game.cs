@@ -10,6 +10,8 @@ namespace MathForGames
         private static bool _gameOver = false;
         private Scene _scene;
 
+        public static ConsoleColor DefaultColor { get; set; } = ConsoleColor.Cyan;
+
         //Static function used to set game over without an instance of game.
         public static void SetGameOver(bool value)
         {
@@ -31,9 +33,9 @@ namespace MathForGames
         {
             Console.CursorVisible = false;
             _scene = new Scene();
-            Actor actor = new Actor(0, 0 '@', ConsoleColor.White);
-            actor._velocity.X = 1;
-            Player player = new Player(0, 1, '$' ConsoleColor.Blue);
+            Actor actor = new Actor(0, 0, '@', ConsoleColor.White);
+            actor.Velocity.X = 1;
+            Player player = new Player(0, 1, '$' ,ConsoleColor.Blue);
             _scene.AddActor(player);
             _scene.AddActor(actor);
         }
@@ -61,7 +63,7 @@ namespace MathForGames
         //Used to display objects and other info on the screen.
         public void Draw()
         {
-            Console.SetCursorPosition
+            Console.SetCursorPosition;
         }
 
 
