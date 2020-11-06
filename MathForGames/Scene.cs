@@ -53,6 +53,11 @@ namespace MathForGames
             _actors = tempArray;
             return false;
         }
+        //This is to check if and collisions are made with the actor scene by scene.
+        private void CheckCollision()
+        {
+
+        }
         public bool RemoveActor(Actor actor)
         {
             //Check to see if actor pass as null
